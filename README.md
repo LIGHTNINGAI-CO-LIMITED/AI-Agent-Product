@@ -19,3 +19,5 @@ codex-skills/ai-agent-product
 ## Current Packaging Rule
 
 Execution prompts, handoff prompts, and agent prompts can use the current 14,500-character ceiling. Older 10,000-character prompt packaging guidance is obsolete.
+
+Generated validators, compression scripts, backend submit scripts, and local preflight checks must also use `PROMPT_CHAR_LIMIT = 14500`. Do not keep legacy `len(prompt) < 10000`, `MAX_PROMPT_CHARS = 10000`, or "under 10,000" checks.

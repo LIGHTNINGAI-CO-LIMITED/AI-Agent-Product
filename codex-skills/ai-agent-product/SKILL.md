@@ -29,6 +29,10 @@ Default fast-track posture for P0-A / isolated UAT after the user has approved i
 
 When packaging execution prompts, handoff prompts, or agent prompts for MyVocal AI Agent work, the current prompt ceiling is 14,500 characters (`14500`). Treat older 10,000-character guidance as obsolete. Keep prompts concise, but do not split a scoped prompt merely because it exceeds 10,000 characters. Split only when the prompt would exceed 14,500 characters (`14500`), mix unrelated scopes, cross an approval boundary, or harm readability or safety.
 
+This limit also applies to generated validators, compression scripts, backend submit scripts, and local preflight checks for MyVocal AI Agent prompt fields. Do not generate or preserve script logic such as `len(prompt) < 10000`, `len(prompt) <= 10000`, `MAX_PROMPT_CHARS = 10000`, or "must be under 10,000". Use `PROMPT_CHAR_LIMIT = 14500` instead. If the target API or page requires a strict less-than check, validate against `< 14500` and target a small buffer such as `14480`; do not silently fall back to 10,000.
+
+中文规则：MyVocal AI Agent 提示词字段、本地压缩脚本、写入脚本、回读校验脚本的长度上限统一按 `14500` 字符处理。旧的 `10000` / `1万字` 口径已经废弃。遇到历史项目记录、旧脚本或旧截图写着小于 10000 时，必须以本节为准；如果后台在低于 14500 时仍拒绝，记录真实响应并按接口漂移排查，不要自行降级成 10000。
+
 ## Start Here
 
 1. Inspect the existing project before choosing files or framework patterns.
