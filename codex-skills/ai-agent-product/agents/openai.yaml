@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Agent Product"
+  short_description: "MyVocal ElevenLabs REST/WSS proxy"
+  default_prompt: "Use $ai-agent-product to build MyVocal's secure ElevenLabs REST passthrough, WSS relay, or SDK surface."
