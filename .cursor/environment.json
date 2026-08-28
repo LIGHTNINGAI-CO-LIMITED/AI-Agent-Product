@@ -1,0 +1,4 @@
+{
+  "name": "AI Agent Product Skill",
+  "install": "python3 --version && python3 -c \"import yaml, sys; print('pyyaml', yaml.__version__)\" && python3 scripts/validate_skills.py"
+}
